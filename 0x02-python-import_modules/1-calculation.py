@@ -7,17 +7,13 @@ if __name__ == "__main__":
     b = 5
 
     """Calling the Addition Function"""
-    add = calculator_1.add(a, b)
-    print("{:d} + {:d} = {:d}".format(a, b, add))
+    print("{:d} + {:d} = {:d}".format(a, b, calculator_1.add(a, b)))
 
     """Calling the Subtraction Function"""
-    diff = calculator_1.sub(a, b)
-    print("{:d} - {:d} = {:d}".format(a, b, diff))
+    print("{:d} - {:d} = {:d}".format(a, b, calculator_1.sub(a, b)))
 
     """Calling the Multiplication Function"""
-    mult = calculator_1.mul(a, b)
-    print("{:d} * {:d} = {:d}".format(a, b, mult))
+    print("{:d} * {:d} = {:d}".format(a, b, calculator_1.mul(a, b)))
 
     """Calling the Division Function"""
-    div = calculator_1.div(a, b)
-    print("{:d} / {:d} = {:d}".format(a, b, div))
+    print("{:d} / {:d} = {:d}".format(a, b, calculator_1.div(a, b)))
