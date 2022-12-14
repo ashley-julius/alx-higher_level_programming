@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # _ _ _ _ HANDS ON EXPERIENCE WITH MODULES _ _ _ _ _
 if __name__ == "__main__":
-    import calculator_1
+    from calculator_1 import add, sub, mul, div
     """Defining the two integers"""
     a = 10
     b = 5
