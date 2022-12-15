@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+# _ _ _THIS PROGRAM IS AN INFINITE ADDING CALCULATOR _ _ _
+if __name__ == "__main__":
+    # _ _ DEFINING THE FLAG, ITERATOR AND SUM VARIABLES _ _
+    import sys
+    sum = 0
+    active = True
+    i = 1
+    
+    # _ _ WHILE LOOP
+    while active:
+        num = int(sys.argv[i])
+        # _ _ _ SUMING THE ARGUMENTS _ _ _ 
+        sum += num
+
+        # _ _ CHECK IF IT'S THE LAST ARGUMENT _ _ _
+        if i == (len(sys.argv) - 1):
+            active = False
+
+    return sum
