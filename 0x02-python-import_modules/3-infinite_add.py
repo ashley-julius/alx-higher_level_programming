@@ -14,5 +14,5 @@ if __name__ == "__main__":
             # _ _ _ SUMING THE ARGUMENTS _ _ _
             sum += num
 
-        #_ _ _ PRINTING THE SUM OF ARGUMENT _ _ _
+        # _ _ _ PRINTING THE SUM OF ARGUMENT _ _ _
         print(sum)
