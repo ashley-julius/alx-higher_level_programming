@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+# THIS PROJECT INTRODUCES EXCEPTIONS HANDLING IN PYTHON
+def safe_print_list(my_list=[], x=0):
+    """USING TRY AND EXCEPT TO PRINT
+    CERTAIN ELEMENTS/ITEMS TO THE 
+    STANDARD OUTPUT 
+    """
+    try:
+        for item in my_list[0:(x+1)]:
+            print(item, end='')
+
+    except Exception:
+        for item in my_list[:]:
+            print(item, end='')
+
+    print()
