@@ -3,11 +3,7 @@
 def safe_print_integer(value):
     """Checks for int or string"""
     try:
-        if value > 0:
             print("{:d}".format(value))
             return True
-        elif value <= 0:
-            print("{:d}".format(value))
-            return True
-    except TypeError:
+    except ValueError:
         return False
