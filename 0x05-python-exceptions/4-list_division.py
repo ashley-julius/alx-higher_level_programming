@@ -7,18 +7,16 @@ def list_division(my_list_1, my_list_2, list_length):
         quotient = 0
         try:
             quotient = my_list_1[i] / my_list_2[i]
-            Quotients.append(quotient)
         except TypeError:
             quotient = 0
-            Quotients.append(quotient)
             print("wrong type")
         except ZeroDivisionError:
             quotient = 0
-            Quotients.append(quotient)
             print("division by 0")
         except IndexError:
             quotient = 0
-            Quotients.append(quotient)
             print("out of range")
+        finally:
+            Quotients.append(quotient)
 
     return Quotients    
