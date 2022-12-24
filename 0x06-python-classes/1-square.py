@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-# _ _ _ THIS PROGRAM PROVIDES MORE INSIGHT ON OOPS
+"""This module contains: the class square"""
 
 
-class Square:
+class Square():
     """
         square: defines a square
         Attributes:
@@ -11,6 +11,7 @@ class Square:
                 __init__: To Initialize the instance variable
     """
     def __init__(self, size):
+
         """Initializing the attributes
             Args:
                 size attributes
