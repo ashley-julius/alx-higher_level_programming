@@ -29,6 +29,7 @@ class Square():
             print("size must be an integer")
         except Exception:
             raise TypeError
+
     def area(self):
         """Calculates the area of square"""
         return (self.__size ** 2)
