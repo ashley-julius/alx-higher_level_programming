@@ -83,14 +83,11 @@ class Square():
         """
             my_print: prints # or blank line to stdout
         """
-        if self.__size == 0:
-            print("")
+        if self.__size > 0:
+            for y in range(self.__position[1]):
+                print()
+            for x in range(self.__size):
+                print(" " * self.__position[0], end='')
+                print('#' * self.__size)
         else:
-            for line in range(0, self.__position[1]):
-                print()
-            for i in range(0, self.__size):
-                for space in range(0, self.__position[0]):
-                    print(" ", end="")
-                for j in range(0, self.__size):
-                    print("#", end="")
-                print()
+            print()
