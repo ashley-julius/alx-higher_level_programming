@@ -42,12 +42,11 @@ class Square():
             Arguments:
                 value: an integer or string
         """
-        if type(value) != int:
-            raise TypeError("size must be an integer")
-        elif value < 0:
+        if type(value) != int or value < 0:
             raise ValueError("size must be >= 0")
-        elif type(value) == int and value >= 0:
-            self.__size = value
+        elif type(value) == int:
+            if value >= 0:
+                self.__size = value
 
     @property
     # getters function
