@@ -20,8 +20,8 @@ class Square():
             Size attributes
             position attributes
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
     # Using property decorator
     # a getter function
 
