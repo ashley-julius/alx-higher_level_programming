@@ -64,17 +64,13 @@ class Square():
             Argument:
                 value: instance attribute
         """
-        if type(value[0]) != int or type(value[1]) != int:
-            raise TypeError("position must be a tuple of 2\
- positive integers")
-        elif value[0] < 0 or value[1] < 0:
-            raise TypeError("position must be a tuple of 2\
- positive integers")
-        elif type(value) != tuple or len(value) != 2:
-            raise TypeError("position must be a tuple of 2\
- positive integers")
+        if type(value) is tuple and len(value) is 2 and \
+                type(value[0]) is int and type(value[1]) is int and \
+                    value[0] >= 0 and value[1] >= 0:
+                self.__position = value
         else:
-            self.__position = value
+            raise TypeError("position must be a tuple of 2 positive\
+ integers")
 
     def area(self):
         """Calculates the area of square"""
