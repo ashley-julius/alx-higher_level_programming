@@ -49,13 +49,15 @@ class Square():
         self.__size = value
 
     @property
-    #getters function
+    # getters function
     def position(self):
         """
             position: retrieves the position
         """
         return self.__position
+
     @position.setter
+    # setter function
     def position(self, value):
         """
             position: sets the position attributes
