@@ -55,6 +55,8 @@ class Node:
                 self.__next_node = value
         except TypeError:
             print("next_node must be a node object")
+        except Exception as e:
+            print(e)
 
 
 class SinglyLinkedList:
