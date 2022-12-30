@@ -84,6 +84,15 @@ class Square():
             if self.__position[0] <= 0 and self.__position[1] <= 0:
                 for k in range(self.__size):
                     print('#' * self.__size)
+            elif self.__positon[0] <= 0:
+                for k in range(self.__position[1]):
+                    print()
+                for p in range(self.__size):
+                    print("#" * self.__size, end="")
+            elif self.__position[1] <= 0:
+                for w in range(self.__size):
+                    print(" " * self.__position[0], end="")
+                    print("#" * self.__size)
             else:
                 for y in range(self.__position[1]):
                     print()
@@ -100,13 +109,26 @@ class Square():
         if self.__size >= 0:
             if self.__position[0] <= 0 and self.__position[1] <= 0:
                 for k in range(self.__size):
-                    print("#" * self.__size)
-            for y in range(self.__position[1]):
-                items += "\n"
-            for x in range(self.__position[0]):
-                items += " " * self.__position[0]
-                items += "#" * self.__size
-                items += "\n"
+                    items += "#" * self.__size
+                    items += "\n"
+            elif self.__position[0] <= 0:
+                for k in range(self.__position[1]):
+                    items += "\n"
+                for k in range(self.__size):
+                    items += "#" * self.__size
+                    items += "\n"
+            elif self.__position[1] <= 0:
+                for k in range(self.__size):
+                    items += " " * self.__position[0]
+                    items += "#" * self.__size
+                    items += "\n"
+            else:
+                for y in range(self.__position[1]):
+                    items += "\n"
+                for x in range(self.__position[0]):
+                    items += " " * self.__position[0]
+                    items += "#" * self.__size
+                    items += "\n"
             return items[:-1]
         else:
             items += "\n"
