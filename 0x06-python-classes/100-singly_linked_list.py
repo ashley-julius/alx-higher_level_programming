@@ -50,10 +50,11 @@ class Node:
     def next_node(self, value):
 
         """next_node: to set the next_node attribute"""
-        if type(value) is Node or type(value) is None:
-            self.__next_node = value
-        else:
-            raise TypeError("next_node must be a node object")
+        try:
+            if type(value) is Node or type(value) is None:
+                self.__next_node = value
+        except TypeError:
+            print("next_node must be a node object")
 
 
 class SinglyLinkedList:
