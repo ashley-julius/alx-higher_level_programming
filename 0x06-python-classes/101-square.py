@@ -64,7 +64,7 @@ class Square():
             Argument:
                 value: instance attribute
         """
-        if type(value) == tuple and len(value) is 2 and \
+        if type(value) is tuple and len(value) == 2 and \
             type(value[0]) is int and type(value[1]) is int and \
                 value[0] >= 0 and value[1] >= 0:
             self.__position = value
@@ -80,12 +80,16 @@ class Square():
         """
             my_print: prints # or blank line to stdout
         """
-        if self.__size > 0:
-            for y in range(self.__position[1]):
-                print()
-            for x in range(self.__size):
-                print(" " * self.__position[0], end='')
-                print('#' * self.__size)
+        if self.__size >= 0:
+            if self.__position[0] <= 0 and self.__position[1] <= 0:
+                for k in range(self.__size):
+                    print('#' * self.__size)
+            else:
+                for y in range(self.__position[1]):
+                    print()
+                for x in range(self.__size):
+                    print(" " * self.__position[0], end='')
+                    print('#' * self.__size)
         else:
             print()
 
@@ -93,7 +97,10 @@ class Square():
     def __str__(self):
         """This function acts as the print function"""
         items = ""
-        if self.__size > 0:
+        if self.__size >= 0:
+            if self.__position[0] <= 0 and self.__position[1] <= 0:
+                for k in range(self.__size):
+                    print("#" * self.__size)
             for y in range(self.__position[1]):
                 items += "\n"
             for x in range(self.__position[0]):
