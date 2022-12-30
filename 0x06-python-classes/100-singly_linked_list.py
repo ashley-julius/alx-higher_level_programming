@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """Class and singly linked list module.
 This module performs creation of singly list, inserting,
-and printing 
+and printing
 """
 # This program inserts a new node into sorted position
 
+
 class Node:
     """
-        This class creates nodes of linked list 
+        This class creates nodes of linked list
         Node: creates a node
         Attributes:
             data: private instance attribute
@@ -25,14 +26,12 @@ class Node:
 
     @property
     # the getter function for data
-
     def data(self):
         """ data: the getter function to retrieve the data"""
         return self.__data
 
     @data.setter
     # the setter fucntion for data
-
     def data(self, value):
         """data: sets the data attrubute"""
         if type(value) != int:
@@ -42,15 +41,14 @@ class Node:
 
     @property
     # the getter function for next_node
-
     def next_node(self):
         """next_node: to retrieve the next_node attribute"""
         return self.__next_node
 
     @next_node.setter
     # the setter function for next_node
-
     def next_node(self, value):
+
         """next_node: to set the next_node attribute"""
         if type(value) is Node or type(value) is None:
             self.__next_node = value
