@@ -106,7 +106,7 @@ class Square():
     def __str__(self):
         """This function acts as the print function"""
         items = ""
-        if self.__size >= 0:
+        if self.__size > 0:
             if self.__position[0] <= 0 and self.__position[1] <= 0:
                 for k in range(self.__size):
                     items += "#" * self.__size
