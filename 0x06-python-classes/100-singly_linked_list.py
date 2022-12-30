@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""Class and singly linked list module.
+This module performs creation of singly list, inserting,
+and printing 
+"""
 # This program inserts a new node into sorted position
 
 class Node:
@@ -13,8 +17,8 @@ class Node:
         """
             __init__: Initializes the attributes
             Args:
-                data: data part of node
-                next_node: node part of node
+                data: 'int' data part of node
+                next_node: 'Node' node part of node
         """
         self.data = data
         self.__next_node = next_node
@@ -23,20 +27,14 @@ class Node:
     # the getter function for data
 
     def data(self):
-        """ 
-            data: the getter function to retrieve the data
-        """
+        """ data: the getter function to retrieve the data"""
         return self.__data
 
     @data.setter
     # the setter fucntion for data
 
     def data(self, value):
-        """
-            data: sets the data attribute
-            Args:
-                value: value to set the data attribute
-        """
+        """data: sets the data attrubute"""
         if type(value) != int:
             raise TypeError("data must be an integer")
         else:
@@ -48,6 +46,7 @@ class Node:
     def next_node(self):
         """next_node: to retrieve the next_node attribute"""
         return self.__next_node
+
     @next_node.setter
     # the setter function for next_node
 
@@ -68,16 +67,18 @@ class SinglyLinkedList:
         """Initializes the attributes"""
         self.__head = None
 
-    # My own __stir__ function that prints all objects in the list
+    # My own __stir__ function that prints all objects
     def __str__(self):
         """This function prints each node's data on a new line"""
         sll = ''
         ptr = self.__head
+
         if ptr is not None:
             while ptr is not None:
                 sll += str(ptr.data) + '\n'
                 ptr = ptr.next_node
         return sll[:-1]
+
     # Method that inserts the node is ascending order
     def sorted_insert(self, value):
         """sorted_insert: sorts the nodes in ascending order"""
