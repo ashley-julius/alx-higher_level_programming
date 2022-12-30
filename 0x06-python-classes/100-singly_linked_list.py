@@ -27,6 +27,7 @@ class Node:
             data: the getter function to retrieve the data
         """
         return self.__data
+
     @data.setter
     # the setter fucntion for data
 
@@ -45,19 +46,13 @@ class Node:
     # the getter function for next_node
 
     def next_node(self):
-        """
-            next_node: to retrieve the next_node attribute
-        """
+        """next_node: to retrieve the next_node attribute"""
         return self.__next_node
     @next_node.setter
     # the setter function for next_node
 
     def next_node(self, value):
-        """
-            next_node: to set the next_node attribute
-                Args:
-                    value: value to set the next_node attribute
-        """
+        """next_node: to set the next_node attribute"""
         if type(value) is Node or type(value) is None:
             self.__next_node = value
         else:
@@ -85,11 +80,7 @@ class SinglyLinkedList:
         return sll[:-1]
     # Method that inserts the node is ascending order
     def sorted_insert(self, value):
-        """
-            sorted_insert: sorts the nodes in ascending order
-            Args:
-                value: the value to use in condition when inserting
-        """
+        """sorted_insert: sorts the nodes in ascending order"""
         # let ptr points to the first node or none
         ptr = self.__head
 
