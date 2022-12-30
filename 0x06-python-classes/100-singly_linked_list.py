@@ -34,10 +34,13 @@ class Node:
     # the setter fucntion for data
     def data(self, value):
         """data: sets the data attrubute"""
-        if type(value) != int:
-            raise TypeError("data must be an integer")
-        else:
-            self.__data = value
+        try:
+            if type(value) is int:
+                self.__data = value
+        except TypeError:
+            print("data must be an integer")
+        except Exception as e:
+            print(e)
 
     @property
     # the getter function for next_node
