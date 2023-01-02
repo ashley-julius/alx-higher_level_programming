@@ -1,0 +1,95 @@
+#!/usr/bin/python3
+"""This module defines a Square"""
+
+
+class Square():
+    """
+        Square: defines a square
+        Attributes:
+                size: To know the length of sides, area and perimeter
+
+        Method:
+                __init__: Initializing the Square attribute
+
+                area: Calculates the area of square
+     """
+    def __init__(self, size=0):
+        """Initializing the instance attribute
+
+        Args:
+            Size attributes
+        """
+        self.__size = size
+    # Using property decorator
+    # a getter function
+
+    @property
+    def size(self):
+
+        """
+            size: to return the size attribute
+        """
+        return self.__size
+    # setter function
+
+    @size.setter
+    def size(self, value):
+        """
+            size: To set the size attribute
+
+            Arguments:
+                value: an integer or string
+        """
+        if type(value) != int or type(value) != float:
+            raise TypeError("size must be a number")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
+
+    def area(self):
+        """Calculates the area of square"""
+        return (self.__size ** 2)
+
+    def __lt__(self, another_square):
+        """Do a less than comparison between two objects"""
+        if self.area < another_square.area:
+            return True
+        else:
+            return False
+
+    def __le__(self, another_square):
+        """Do a less than or equal to comparison between objects"""
+        if self.area < another_square.area or self.area 
+        == another_square.area:
+            return True
+        else:
+            return False
+
+    def __eq__(self, another_square):
+        """Do an equal to comparison between objects"""
+        if self.area == another_square.area:
+            return True
+        else:
+            return False
+
+    def __ne__(self, another_square):
+        """Do a not equal to comparison between objects"""
+        if self.area != another_square.area:
+            return True
+        else:
+            return False
+
+    def __gt__(self, another_square):
+        """Do a greater than comparison between objects"""
+        if self.area > another_square.area:
+            return True
+        else:
+            return False
+
+    def __ge__(self, another_square):
+        """Do a greater than equal to comparison between objects"""
+        if self.area > another_square.area 
+        or self.area == another_square.area:
+            return True
+        else:
+            return False
