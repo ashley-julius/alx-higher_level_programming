@@ -79,8 +79,7 @@ class Rectangle:
         items = ""
         items += "Rectangle(" + str(self.__width) + ', ' \
             + str(self.__height) + ')'
-        items = eval(items)
-        return items
+        return (eval(items))
 
     def __del__(self):
         """This method destroys a class instance"""
