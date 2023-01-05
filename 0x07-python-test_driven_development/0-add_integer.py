@@ -2,6 +2,8 @@
 """
     This module adds only integers and returns them
 """
+
+
 def add_integer(a, b=98):
     """ This function adds two numbers that are only ints """
     # check if a or b is int or float or else raise TypeError
@@ -14,4 +16,3 @@ def add_integer(a, b=98):
     if type(b) == float:
         b = int(b)
     return (a + b)
-
