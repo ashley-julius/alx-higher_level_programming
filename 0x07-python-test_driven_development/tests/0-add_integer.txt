@@ -107,3 +107,31 @@ Traceback (most recent call last):
     raise TypeError("a must be an integer")
 TypeError: a must be an integer
 
+if you pass in a float infinity, then it would throw an overflowerror
+
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 15, in add_integer
+    a = int(a)
+OverflowError: cannot convert float infinity to integer
+
+if you pass in nan, then it would throw ValueError
+
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 15, in add_integer
+    a = int(a)
+ValueError: cannot convert float NaN to integer
+
+
+if you pass in nan and an int, it would throw a ValueError
+
+>>> add_integer(float('inf'), -5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/0-add_integer.py", line 15, in add_integer
+    a = int(a)
+OverflowError: cannot convert float infinity to integer
+
