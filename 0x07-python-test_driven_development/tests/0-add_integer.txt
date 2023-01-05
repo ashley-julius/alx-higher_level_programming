@@ -58,6 +58,12 @@ if you pass in two float numbers, then we would convert to int
 4
 
 
+if you pass only a float value, then it would be converted to it, and
+added for the value of b
+
+>>> add_integer(2.5)
+100
+
 
 TESTING FOR NON-NUMBERS:
 
