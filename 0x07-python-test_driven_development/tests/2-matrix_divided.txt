@@ -1,0 +1,103 @@
+This file extends our previous knowledge of interactive testing
+
+	How the function works:
+
+This function only divides element of a list and return the quotient
+in floats. 
+
+The following test has been done:
+	Test to see if either list or nested list is empty
+	Test to see if either list or nested list is a list
+	Test to see if their length are equal
+	Test to see if only int and float are the divisor
+	Test to see that divisor should not be zero
+
+Invoking and calling the function 
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+if an empty is passed
+
+>>> matrix = []
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 20, in matrix_divided
+    raise TypeError(repeated_msg)
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test to see if the nested list length is not two
+
+>>> matrix = []
+>>> matrix = [
+...     [1, 2, 3],
+...     [1, 2]
+... ]
+
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 38, in matrix_divided
+    raise TypeError("Each row of the matrix must have\
+TypeError: Each row of the matrix must have the same size
+
+
+Test to see when a string is passed in the nested list
+
+>>> matrix = [
+...     [2, 'julius', 8],
+...     [9, 5, 3]
+... ]
+
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 31, in matrix_divided
+    raise TypeError(repeated_msg)
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test to see when we decided to divide by zero
+
+>>> matrix = [
+...     [2, 4, 6],
+...     [2, 1, 6]
+... ]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 45, in matrix_divided
+    raise ZeroDivisionError("division by zero")
+ZeroDivisionError: division by zero
+
+Test to see when we pass a string as our divisor
+
+>>> matrix_divided(matrix, 'julius')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 42, in matrix_divided
+    raise TypeError("div must be a number")
+TypeError: div must be a number
+
+
+Test to see when we pass in a tuple instead of a list
+
+>>> matrix = (
+...	(3, 4),
+...	(4, 9)
+... )
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 27, in matrix_divided
+    raise TypeError(repeated_msg)
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Test to see when we passed in the correct output
+
+>>> matrix = [
+...  [1, 2, 3],
+...  [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
