@@ -32,11 +32,10 @@ def matrix_divided(matrix, div):
     # checking if the list we just cloned is a list
     if not isinstance(new_matrix, list):
         raise TypeError(repeated_msg)
-    for row in new_matrix:
         # checking if length of list is not the same
-        if not (len(row) == len(new_matrix[1])):
-            raise TypeError("Each row of the matrix must have\
- the same size")
+    if not all(len(row) == len(matrix[0]) for row in matrix):
+        raise TypeError("Each row of the matrix must have the\
+                same size")
     # checking if divisor is not int or float
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")
