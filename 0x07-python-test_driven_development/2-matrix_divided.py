@@ -34,8 +34,10 @@ def matrix_divided(matrix, div):
     if not isinstance(new_matrix, list):
         raise TypeError(repeated_msg)
         # checking if length of list is not the same
-    if not all(len(row) == len(matrix[1]) for row in matrix):
-        raise TypeError("Each row of the matrix must have the\
+    first_row_len = len(matrix[0])
+    for i in range(len(matrix)):
+        if len(matrix[i]) != first_row_len:
+            raise TypeError("Each row of the matrix must have the\
  same size")
     # checking if divisor is not int or float
     if not isinstance(div, int) and not isinstance(div, float):
