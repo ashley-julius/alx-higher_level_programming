@@ -188,3 +188,11 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
+Test if only one nested list with one item is passed
+
+>>> matrix = [
+...     [3]
+... ]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+
