@@ -10,14 +10,15 @@ def matrix_divided(matrix, div):
     This function divides each element in a list and returns
     a new quotient list in two floating points precision
     """
-    # cloning of list
-    new_matrix = matrix[:]
 
     repeated_msg = "matrix must be a matrix (list of lists)\
  of integers/floats"
-    # checking for empty list or none
-    if not new_matrix:
+    # cloning of list
+    if matrix is None:
         raise TypeError(repeated_msg)
+    else:
+        new_matrix = matrix[:]
+    # checking for empty list or none
     for row in new_matrix:
         # checking if nested list in having a none value
         if not row:
@@ -33,9 +34,9 @@ def matrix_divided(matrix, div):
     if not isinstance(new_matrix, list):
         raise TypeError(repeated_msg)
         # checking if length of list is not the same
-    if not all(len(row) == len(matrix[0]) for row in matrix):
+    if not all(len(row) == len(matrix[1]) for row in matrix):
         raise TypeError("Each row of the matrix must have the\
-                same size")
+ same size")
     # checking if divisor is not int or float
     if not isinstance(div, int) and not isinstance(div, float):
         raise TypeError("div must be a number")

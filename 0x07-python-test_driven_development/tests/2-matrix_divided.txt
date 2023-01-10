@@ -14,10 +14,13 @@ The following test has been done:
 
 Invoking and calling the function 
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
-
+_________________________________
 if an empty is passed
 
->>> matrix = []
+>>> matrix = [
+... 	[],
+... 	[]
+... ]
 >>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -25,14 +28,13 @@ Traceback (most recent call last):
     raise TypeError(repeated_msg)
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+_________________________________
 Test to see if the nested list length is not two
 
->>> matrix = []
 >>> matrix = [
 ...     [1, 2, 3],
 ...     [1, 2]
 ... ]
-
 >>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -40,14 +42,13 @@ Traceback (most recent call last):
     raise TypeError("Each row of the matrix must have\
 TypeError: Each row of the matrix must have the same size
 
-
+_________________________________
 Test to see when a string is passed in the nested list
 
 >>> matrix = [
 ...     [2, 'julius', 8],
 ...     [9, 5, 3]
 ... ]
-
 >>> matrix_divided(matrix, 3)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -55,6 +56,8 @@ Traceback (most recent call last):
     raise TypeError(repeated_msg)
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+
+_________________________________
 Test to see when we decided to divide by zero
 
 >>> matrix = [
@@ -68,6 +71,8 @@ Traceback (most recent call last):
     raise ZeroDivisionError("division by zero")
 ZeroDivisionError: division by zero
 
+
+_________________________________
 Test to see when we pass a string as our divisor
 >>> matrix = [
 ...     [2, 4, 6],
@@ -81,6 +86,7 @@ Traceback (most recent call last):
 TypeError: div must be a number
 
 
+_________________________________
 Test to see when we pass in a tuple instead of a list
 
 >>> matrix = (
@@ -95,6 +101,7 @@ Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 
+_________________________________
 Test to see when we passed in the correct output
 
 >>> matrix = [
@@ -105,6 +112,7 @@ Test to see when we passed in the correct output
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
 
+_________________________________
 Test to see when a negative number is passed to div
 
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
@@ -114,8 +122,9 @@ Test to see when a negative number is passed to div
 >>> matrix_divided(matrix, -3)
 [[-1.0, -3.0], [-4.0, -5.0]]
 
-Test of list of lists of integers with one float(inf/nan) and an int
 
+_________________________________
+Test of list of lists of integers with one float(inf/nan) and an int
 
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 >>> infini_te = [
@@ -126,6 +135,7 @@ Test of list of lists of integers with one float(inf/nan) and an int
 [[inf, 1.67, 2.33], [2.67, 3.0, nan]]
 
 
+_________________________________
 Test list of lists of integers by float infinity div
 
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
@@ -136,6 +146,8 @@ Test list of lists of integers by float infinity div
 >>> matrix_divided(infini_te, float('inf'))
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
+
+_________________________________
 Test list of lists of integers with one float(inf/nan)/float(inf/nan)
 
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
@@ -146,6 +158,8 @@ Test list of lists of integers with one float(inf/nan)/float(inf/nan)
 >>> matrix_divided(infini_te, float('nan'))
 [[nan, nan, nan], [nan, nan, nan]]
 
+
+_________________________________
 Test list of lists of integers with one float(inf/nan)
 
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
@@ -155,4 +169,36 @@ Test list of lists of integers with one float(inf/nan)
 ... ]
 >>> matrix_divided(infini_te, float('inf'))
 [[0.0, 0.0, nan], [0.0, 0.0, 0.0]]
+
+
+_________________________________
+Test the list of different length
+
+>>> diff_len = [[1,3,3,3], [3,5,1,2,5], [2,5,8]]
+>>> matrix_divided(diff_len, 3)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 37, in matrix_divided
+    if not all(len(row) == len(matrix[0]) for row in matrix):
+TypeError: Each row of the matrix must have the same size
+
+
+Test if no arguments was passed
+
+>>> diff_len = [[1,3,3,3], [3,5,1,2,5], [2,5,8]]
+>>> matrix_divided()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+
+Test if one arguments was passed
+
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> diff_len = [[1,3,3,3], [3,5,1,2,5], [2,5,8]]
+>>> matrix_divided(diff_len)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
