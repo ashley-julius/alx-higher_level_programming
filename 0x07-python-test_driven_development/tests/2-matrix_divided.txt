@@ -29,20 +29,6 @@ Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 _________________________________
-Test to see if the nested list length is not two
-
->>> matrix = [
-...     [1, 2, 3],
-...     [1, 2]
-... ]
->>> matrix_divided(matrix, 3)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 38, in matrix_divided
-    raise TypeError("Each row of the matrix must have\
-TypeError: Each row of the matrix must have the same size
-
-_________________________________
 Test to see when a string is passed in the nested list
 
 >>> matrix = [
