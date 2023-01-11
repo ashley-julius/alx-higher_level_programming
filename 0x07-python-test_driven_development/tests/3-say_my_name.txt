@@ -36,6 +36,16 @@ Traceback (most recent call last):
 	...
 TypeError: first_name must be a string
 
+>>> say_my_name("White", 12)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+>>> say_my_name()
+Traceback (most recent call last):
+	...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
 
 >>> say_my_name(12, 12)
 Traceback (most recent call last):
@@ -67,4 +77,5 @@ TypeError: first_name must be a string
 Traceback (most recent call last):
 	...
 TypeError: first_name must be a string
+
 
