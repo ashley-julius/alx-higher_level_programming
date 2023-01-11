@@ -14,7 +14,7 @@ def matrix_divided(matrix, div):
     repeated_msg = "matrix must be a matrix (list of lists)\
  of integers/floats"
     # cloning of list
-    if matrix is None or len(matrix) == 1:
+    if matrix is None:
         raise TypeError(repeated_msg)
     else:
         new_matrix = matrix[:]
