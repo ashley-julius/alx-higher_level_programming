@@ -37,5 +37,10 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer(my_list)
 
+    def test_all_neg_maxint(self):
+        """This function tests all negative values"""
+        my_list = [-1, -9, -3, -8]
+        self.assertEqual(max_integer(my_list), -1)
+
 if __name__ == "__main__":
     unittest.main()
