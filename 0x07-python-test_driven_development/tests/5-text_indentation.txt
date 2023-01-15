@@ -12,8 +12,7 @@ IMPORTING MODULE:
 
 >>> text_indentation("Holberton.")
 Holberton.
-
-
+<BLANKLINE>
 
 2. Test when a float is passed
 
@@ -69,3 +68,15 @@ TypeError: text must be a string
 Traceback (most recent call last):
 	...
 TypeError: text must be a string
+
+8: Test for empty string
+
+>>> text_indentation("")
+
+9: Test for when 3 arguments are given instead of 1
+
+>>> text_indentation("ble", "ooh", "wah")
+Traceback (most recent call last):
+	...
+TypeError: text_indentation() takes 1 positional argument but 3 were given
+
