@@ -19,5 +19,4 @@ def text_indentation(text):
     text = text.replace(':', ':\n\n')
 
     # printing the text with 2 new lines after each characters
-    print("\n".join([line.strip() for line in text.split("\n")]),\
-             end="")
+    print("\n".join([line.strip() for line in text.split("\n")]), end="")
