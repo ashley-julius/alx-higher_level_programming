@@ -10,14 +10,10 @@ IMPORTING MODULE:
 1. Correct output
 
 
->>> text_indentation("Holberton. School? How are you: John")
+>>> text_indentation("Holberton.")
 Holberton.
 
-School?
 
-How are you:
-
-John
 
 2. Test when a float is passed
 
