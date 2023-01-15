@@ -17,8 +17,8 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_neg_and_pos_maxint(self):
         """This function tests among negative numbers"""
-        my_list = [-2, 3, -7, 4]
-        self.assertEqual(max_integer(my_list), 4)
+        my_list = [-2, 3, 7, 4]
+        self.assertEqual(max_integer(my_list), 7)
 
     def test_empty_maxint(self):
         """This function tests an empty list"""
