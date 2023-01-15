@@ -12,15 +12,12 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    # ____ if it is, loop through
-    for i in range(len(text)):
-        # - - check if it's the first element
-        if (i == 0 and text[i] == ' '):
-            continue
-        if (i == (len(text) - 1) and text[i] == ' '):
-            break
-        # - - if it's not in character
-        print(text[i], end='')
-        # - - - check if character is met, print 2 newlines
-        if (text[i] in ['.', '?', ':']):
-            print("\n\n", end='')
+    # replace each punctuatin with the same plus two new lines
+
+    text = text.replace('.', '.\n\n')
+    text = text.replace('?', '?\n\n')
+    text = text.replace(':', ':\n\n')
+
+    # printing the text with 2 new lines after each characters
+    print("\n".join([line.strip() for line in text.split("\n")]),\
+             end="")
