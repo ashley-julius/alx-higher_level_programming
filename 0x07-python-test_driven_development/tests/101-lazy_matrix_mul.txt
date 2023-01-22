@@ -32,6 +32,25 @@ Test for both matrices with strings
 Traceback (most recent call last):
 ValueError: data type must provide an itemsize
 
+>>> m_a = "Holberton"
+>>> m_b = [[1, 2], [3, 8]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U9') dtype('<U9') dtype('<U9')
+
+
+>>> m_a = [[1, 2], [3, 8]]
+>>> m_b = "Holberton"
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U9') dtype('<U9') dtype('<U9')
+
+
+>>> m_a = [[1, "2"], [3, 8]]
+>>> m_b = [[1, 2], [3, 8]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+ValueError: data type must provide an itemsize
 
 
 Test for a matrix with tuples
