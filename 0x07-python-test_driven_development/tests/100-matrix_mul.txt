@@ -1,0 +1,120 @@
+_  _ _ _ ALX SOFTWARE ENGINEERING _ _ _ _ _
+
+FILENAME: tests/100-matrix_mul.txt
+
+TEST FOR: 100-matrix_mul.py
+
+importing the module:
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Test for correct output:
+
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[1, 2], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+[[7, 10], [15, 22]]
+
+Test for matrix with a string
+
+>>> m_a = [[1, 2], [3, 'julius']]
+>>> m_b = [[1, 2], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+
+Test for both matrices with strings
+
+>>> m_a = [[1, 2], [3, 'julius']]
+>>> m_b = [[1, 2], [3, 'ashley']]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+
+Test for a matrix with tuples
+
+>>> m_a = [[1, 2], (5, 8)]
+>>> m_b = [[1, 2], [3, 8]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+TypeError: m_a must be a list of lists
+
+
+Test for a matrix of negative values
+
+>>> m_b = [[-1, -2], [-33, -8]]
+>>> m_a = [[1, 2], [3, 4]]
+>>> matrix_mul(m_a, m_b)
+[[-67, -18], [-135, -38]]
+
+
+Test for a matrix of float inf
+
+>>> m_a = [[1, 2], [3, float('inf')]]
+>>> m_b = [[1, 2], [33, 8]]
+>>> matrix_mul(m_a, m_b)
+[[67, 18], [inf, inf]]
+
+
+Test for a matrix of nan
+
+>>> m_a = [[1, 2], [3, float('nan')]]
+>>> m_b = [[1, 2], [33, 8]]
+>>> matrix_mul(m_a, m_b)
+[[67, 18], [nan, nan]]
+
+
+Test for a matrix of both float inf and nan
+
+>>> m_a = [[1, float('inf')], [3, float('nan')]]
+>>> m_b = [[1, 2], [33, 8]]
+>>> matrix_mul(m_a, m_b)
+[[inf, inf], [nan, nan]]
+
+
+Test for a matrix with no elements
+
+>>> m_a = []
+>>> m_b = [[]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+ValueError: m_b can't be empty
+
+
+
+Test for empty matrices
+
+>>> m_b = [[], []]
+>>> m_a = [[], []]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+TypeError: each row of m_b must be of the same size
+
+
+>>> m_b = [[], []]
+>>> m_a = [[]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+
+
+Test for matrices of different length
+
+>>> m_a = [[1, 2], [3, 9, 8, 9], [9, 8, 8]]
+>>> m_b = [[1, 2], [33, 8]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+TypeError: each row of m_a must be of the same size
+
+Test for matrix of None
+
+>>> m_a = [[1, 2], [3, 9], [9, None]]
+>>> m_b = [[1, 2], [33, 8]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+
+
