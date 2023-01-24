@@ -7,7 +7,7 @@ import json
 
 
 def load_from_json_file(filename):
-    """ This function creats an objects from a json file to a 
+    """ This function creats an objects from a json file to a
     file"""
     with open(filename) as fp:
         text = fp.read()
