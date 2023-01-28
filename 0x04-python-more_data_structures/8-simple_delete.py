@@ -4,9 +4,7 @@
 
 def simple_delete(a_dictionary, key=""):
     """ This function deletes a key in dictionary """
-    for value, x in a_dictionary.items():
-        if value == key:
-            del a_dictionary[value]
-        else:
-            pass
-    return a_dictionary
+    b_dictionary = dict(list(a_dictionary.items())[:])
+    if key and key in b_dictionary:
+        b_dictionary.pop(key)
+    return b_dictionary
