@@ -15,7 +15,7 @@ def complex_delete(a_dictionary, value):
                 # if it is, create a new dict
                 dele_dict = {key: val}
             # iterate and delete the keys
-            for (key, val) in dele_dict.items():
-                del find_to_dele[key]
+                for (key, val) in dele_dict.items():
+                    del find_to_dele[key]
         # return a copy when we are done
         return find_to_dele
