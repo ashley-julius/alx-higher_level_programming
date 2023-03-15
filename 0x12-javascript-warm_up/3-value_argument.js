@@ -6,6 +6,6 @@ while (args[count]) {
   console.log(args[count]);
   count++;
 }
-if (count === 0) {
+if (count === undefined) {
   console.log('No argument');
 }
