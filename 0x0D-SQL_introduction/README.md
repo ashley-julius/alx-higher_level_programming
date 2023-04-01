@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/105078661/218877144-195fdb47-b596-4dfc-a468-28587d23ccb3.png)
+
+
 This project teaches us about databases, and the following:
 -- What's a database
 -- What's a relational database
